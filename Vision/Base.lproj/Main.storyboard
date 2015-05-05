@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kdq-Ly-igF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Analyze-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="Analyze" id="vXZ-lx-hvc" customClass="AnalyzeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="k2h-rj-P8B">
+                                <rect key="frame" x="0.0" y="474" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Photo Library" id="OXK-Xm-0xB">
+                                        <connections>
+                                            <action selector="showImagePickerForPhotoPicker:" destination="vXZ-lx-hvc" id="RzG-rR-goD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zif-Hf-JKV"/>
+                                    <barButtonItem systemItem="camera" id="aSN-jA-gAM">
+                                        <connections>
+                                            <action selector="showImagePickerForCamera:" destination="vXZ-lx-hvc" id="Ybd-7s-KZl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boston" id="ZV8-2r-K4l">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="IW1-4u-z4b">
+                                <rect key="frame" x="16" y="263" width="288" height="211"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="Ad9-6h-Gt3">
+                                <rect key="frame" x="151" y="362" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Analyze" id="p6U-bf-e6b"/>
+                    <navigationItem key="navigationItem" id="hc2-c4-Xdb"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Ad9-6h-Gt3" id="GUP-s9-Bfq"/>
+                        <outlet property="imageView" destination="ZV8-2r-K4l" id="Fla-mP-hxJ"/>
+                        <outlet property="textView" destination="IW1-4u-z4b" id="da5-Oq-FwT"/>
+                        <outlet property="toolBar" destination="k2h-rj-P8B" id="yQX-St-1eC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="992"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Hci-3N-mLt">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kdq-Ly-igF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Jxo-Jf-I6V">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="iaz-Ar-2sC"/>
+                        <segue destination="SSg-TV-1P1" kind="relationship" relationship="viewControllers" id="uSP-Cu-0i1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMl-Bk-MnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="992"/>
+        </scene>
+        <!--Crop-->
+        <scene sceneID="mZb-13-eT6">
+            <objects>
+                <viewController title="Crop" id="SSg-TV-1P1" customClass="CropViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3db-LW-2Qe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LuD-ia-9Ug">
+                                <rect key="frame" x="0.0" y="474" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Photo Library" id="AMy-i1-fwX">
+                                        <connections>
+                                            <action selector="showImagePickerForPhotoPicker:" destination="SSg-TV-1P1" id="Sl3-Fa-Gex"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="OUC-F1-PVZ"/>
+                                    <barButtonItem systemItem="camera" id="k8o-zq-CGO">
+                                        <connections>
+                                            <action selector="showImagePickerForCamera:" destination="SSg-TV-1P1" id="VfP-U7-3Jt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boston" id="H0l-Bd-tjD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="262"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="bdM-wl-hiD">
+                                <rect key="frame" x="151" y="362" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="mCU-xr-92L">
+                                <rect key="frame" x="61" y="272" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Crop" id="PLa-e4-wRM"/>
+                    <navigationItem key="navigationItem" id="UTl-7P-icG"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="bdM-wl-hiD" id="IaS-LW-dOc"/>
+                        <outlet property="imageView" destination="H0l-Bd-tjD" id="FJb-ec-DKu"/>
+                        <outlet property="thumbnailView" destination="mCU-xr-92L" id="ZJa-ir-qKA"/>
+                        <outlet property="toolBar" destination="LuD-ia-9Ug" id="ycC-1R-4X3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OJe-ci-ieC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="1670"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="boston" width="640" height="480"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
