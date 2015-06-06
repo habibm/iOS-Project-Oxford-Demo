@@ -1,7 +1,2 @@
 language: objective-c
-xcode_workspace: Vision.xcworkspace
-xcode_scheme: Vision
-xcode_sdk: iphonesimulator
-env: CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO
-notifications:
-  email: false
+script: xcodebuild -workspace Vision.xcworkspace -scheme Vision -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
